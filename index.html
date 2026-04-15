@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Seating Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="classroom">
+    <div class="door">DOOR</div>
+
+    <div class="content">
+        <div class="front-wall">
+            <div class="white-board">SMART BOARD</div>
+
+            <div class="blackboard-area">
+                <div class="black-board">BLACK BOARD</div>
+                <div class="board-tray">
+                    <div class="chalk"></div>
+                    <div class="chalk"></div>
+                    <div class="duster"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="teacher-table">TEACHER</div>
+        <div class="seating-grid" id="grid"></div>
+    </div>
+</div>
+
+<div class="controls">
+
+    <div class="row" id="inputRow">
+        <input type="password" id="codeInput" placeholder="Enter Code">
+        <button onclick="checkCode()">Enter</button>
+
+        <input type="text" id="biasInput" placeholder="Bias Allocator">
+        <button onclick="setBias()">Set Bias</button>
+        <button id="removeBiasBtn" onclick="removeBias()" style="display:none;">Remove Bias</button>
+    </div>
+
+    <div class="row" id="actionRow">
+        <button id="randomBtn" onclick="randomize()">Randomize</button>
+        <button id="resetBtn" onclick="resetAll()" style="display:none;">Reset</button>
+        <button id="finalizeBtn" onclick="finalizePlan()">Finalize</button>
+      <button onclick="downloadExcel()">Download Excel</button>
+    </div>
+
+    <div class="row">
+        <button id="newPlanBtn" onclick="newPlan()" style="display:none;">New Plan</button>
+    </div>
+
+</div>
+
+<div id="attendanceBox">
+    <div class="stat present">Present: <span id="presentCount">0</span></div>
+    <div class="stat absent">Absent: <span id="absentCount">0</span></div>
+    <div class="stat total">Total: 40</div>
+</div>
+
+<div id="sidebar">
+    <h3>Student List</h3>
+    <div id="studentList"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
